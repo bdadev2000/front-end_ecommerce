@@ -1,6 +1,4 @@
-<?php
-    $baseUrl = 'http://localhost:8081';
-?>
+
 <section id="slider">
     <!--slider-->
     <div class="container">
@@ -22,7 +20,7 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="{{ $baseUrl . $sliderItem->image_path }}" class="girl img-responsive" alt="{{ $sliderItem->image_name }}" />
+                                <img src="{{ config('app.base_url') . $sliderItem->image_path }}" class="girl img-responsive" alt="{{ $sliderItem->image_name }}" />
                                 
                             </div>
                         </div>
