@@ -19,7 +19,7 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="{{config('app.base_url'). $productsItem->feature_image_path }}" alt="{{ $productsItem->feature_image_name }}" />
+                                <img src="{{config('app.base_url'). $productsItem->feature_image_path }}" alt="{{ $productsItem->feature_image_name }}" style="height:300px;" />
                                 <h2>{{ $productsItem->price }}</h2>
                                 <p>{{ $productsItem->name }}</p>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>

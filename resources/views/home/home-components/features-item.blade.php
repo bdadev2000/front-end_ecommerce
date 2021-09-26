@@ -6,14 +6,14 @@
         <div class="product-image-wrapper">
             <div class="single-products">
                 <div class="productinfo text-center">
-                    <img src="{{config('app.base_url') . $productItem->feature_image_path}}" alt="{{$productItem->feature_image_name}}" />
-                    <h2>{{ $productItem->price }}</h2>
+                    <img src="{{config('app.base_url') . $productItem->feature_image_path}}" alt="{{$productItem->feature_image_name}}" style="height:300px; object-fit:contain;"/>
+                    <h2>{{ number_format($productItem->price) }}</h2>
                     <p>{{ $productItem->name }}</p>
                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                 </div>
                 <div class="product-overlay">
                     <div class="overlay-content">
-                        <h2>{{ $productItem->price }}</h2>
+                        <h2>{{ number_format($productItem->price) }}</h2>
                         <p>{{ $productItem->name }}</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
