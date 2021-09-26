@@ -17,7 +17,6 @@ class HomeController extends Controller
         $products =  Product::latest()->take(6)->get();
         $productsRecommended = Product::latest('views_count','desc')->take(3)->get();
         $settings = Setting::latest()->get();
-        
         return view('home.index',compact('sliders','categories','products','productsRecommended','settings'));
     }
 
