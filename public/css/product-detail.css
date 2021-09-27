@@ -1,0 +1,22 @@
+.shadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.view-product{
+    margin-bottom:15px;
+}
+
+.product_img{
+   
+}
+
+.card-product-detail{
+    display: flex;
+    padding: 15px 0;
+}
+
+.card-detail{
+    width: 100px;
+    height: 100px;
+    margin-left: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
