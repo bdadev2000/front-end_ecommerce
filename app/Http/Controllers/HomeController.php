@@ -20,4 +20,28 @@ class HomeController extends Controller
         return view('home.index',compact('sliders','categories','products','productsRecommended','settings'));
     }
 
+    
+    function addToCart($id)
+    {
+        $product = Product::find($id);
+        $cart = session()->get('cart');
+        if(isset($cart[$id])){
+            $cart[$id]['quantity'] = $cart[$id]['quantity'] + 1;
+        }else{
+            $cart[$id] = [
+                'name' =>$product->name,
+                'price' =>$product->price,
+                'quantity' =>1,
+            ];
+        }
+        session()->put('cart',$cart);
+        echo "<pre>";
+        print_r(session()->get('cart'));
+    }
+
+    public function showCart()
+    {
+        echo "<pre>";
+        print_r(session()->get('cart'));
+    }
 }
