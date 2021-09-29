@@ -23,6 +23,7 @@ class HomeController extends Controller
     
     function addToCart($id)
     {
+        // session()->flush();
         $product = Product::find($id);
         $cart = session()->get('cart');
         if(isset($cart[$id])){
@@ -32,16 +33,45 @@ class HomeController extends Controller
                 'name' =>$product->name,
                 'price' =>$product->price,
                 'quantity' =>1,
+                'image'=>$product->feature_image_path,
             ];
         }
         session()->put('cart',$cart);
-        echo "<pre>";
-        print_r(session()->get('cart'));
+        return response()->json([
+            'code'=>200,
+            'message'=>'success',
+        ],200);
     }
 
     public function showCart()
     {
-        echo "<pre>";
-        print_r(session()->get('cart'));
+        $settings = Setting::latest()->get();
+        $carts = session()->get('cart');
+        return view('product.cart.shopping-cart',compact('settings','carts'));
+    }
+
+    public function updateCart(Request $request)
+    {
+       
+        if($request->id && $request->quantity){
+            $carts = session()->get("cart");
+            $carts[$request->id]["quantity"] = $request->quantity;
+            session()->put("cart",$carts);
+            $carts = session()->get("cart");
+            $cartComponent = view('product.cart.shopping-cart',compact('carts'))->render();
+            return response()->json(['cart_component' => $cartComponent,'code' =>200],200);
+        }
+    }
+
+    public function deleteCart(Request $request)
+    {
+        if($request->id){
+            $carts = session()->get("cart");
+            unset($carts[$request->id]);
+            session()->put("cart",$carts);
+            $carts = session()->get("cart");
+            $cartComponent = view('product.cart.shopping-cart',compact('carts'))->render();
+            return response()->json(['cart_component' => $cartComponent,'code' =>200],200);
+        }
     }
 }

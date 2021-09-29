@@ -43,7 +43,9 @@
 			url:urlCart,
 			dataType:'json',
 			success:function(data){
-
+				if(data.code === 200){
+					alert("Them san pham thanh cong");
+				}
 			},
 			error:function(){
 

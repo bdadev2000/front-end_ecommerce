@@ -14,7 +14,8 @@
                     <h2>${{ number_format($productItem->price) }}</h2>
                     <p>{{ $productItem->name }}</p>
                     <a data-url="{{ route('addToCart',['id'=>$productItem->id]) }}" href="#" class=" btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    <a href="{{ route('product.detail',['id'=> $productItem->id]) }}" class="btn btn-default add-to-cart">More</a>
+                    <a href="{{ route('product.detail',['id'=> $productItem->id]) }}" class="btn btn-default" style="background: #FE980F;border: 0 none;border-radius: 0;color: white;font-family: 'Roboto', sans-serif; font-size: 15px; margin-bottom: 25px;"
+                    >More</a>
                 </div>
             </div>
         </div>
