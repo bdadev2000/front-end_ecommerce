@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('title')
-Home Page
+Category Product
 @endsection
 
 @section('content')
@@ -21,19 +21,12 @@ Home Page
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img src="{{ config('app.base_url'). $productCategory->feature_image_path }}" alt="{{ $productCategory->feature_image_name }}" style="height:300px;object-fit:contain" />
-                                    <h2>{{ number_format($productCategory->price) }}</h2>
+                                    <h2>${{ number_format($productCategory->price) }}</h2>
                                     <p>{{ $productCategory->name }}</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i
                                             class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
-                                <div class="product-overlay">
-                                    <div class="overlay-content">
-                                        <h2>{{ number_format($productCategory->price) }}</h2>
-                                        <p>{{ $productCategory->name }}</p>
-                                        <a href="#" class="btn btn-default add-to-cart"><i
-                                                class="fa fa-shopping-cart"></i>Add to cart</a>
-                                    </div>
-                                </div>
+                               
                             </div>
                             <div class="choose">
                                 <ul class="nav nav-pills nav-justified">

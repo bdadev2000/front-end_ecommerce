@@ -50,7 +50,7 @@ Shopping Cart
 							<h4><a href="">{{ $cartItem['name'] }}</a></h4>
 						</td>
 						<td class="cart_price">
-							<p>${{ $cartItem['price'] }}</p>
+							<p>${{ number_format($cartItem['price']) }}</p>
 						</td>
 						<td class="cart_quantity">
 							<div class="cart_quantity_button">
@@ -60,7 +60,7 @@ Shopping Cart
 							</div>
 						</td>
 						<td class="cart_total">
-							<p class="cart_total_price">${{ $cartItem['price'] * $cartItem['quantity'] }}</p>
+							<p class="cart_total_price">${{ number_format($cartItem['price'] * $cartItem['quantity']) }}</p>
 						</td>
 						<td class="cart_total">
 							<a data-id="{{ $id }}" class="btn btn-default update cart_update" href="">Update</a>
@@ -141,10 +141,10 @@ Shopping Cart
 			<div class="col-sm-6">
 				<div class="total_area">
 					<ul>
-						<li>Cart Sub Total <span>${{ $total }}</span></li>
+						<li>Cart Sub Total <span>${{ number_format($total) }}</span></li>
 						<li>Eco Tax <span>$2</span></li>
 						<li>Shipping Cost <span>Free</span></li>
-						<li>Total <span>${{ $total +2 }}</span></li>
+						<li>Total <span>${{ number_format($total +2) }}</span></li>
 					</ul>
 					<a class="btn btn-default check_out" href="">Check Out</a>
 				</div>
